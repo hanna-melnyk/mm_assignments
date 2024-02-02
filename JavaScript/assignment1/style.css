@@ -1,0 +1,57 @@
+body {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+/*Emoji cursor class */
+.emoji-cursor {
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><text y="16" font-size="16">❤️</text></svg>'), auto;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 10px 10px 10px 0px;
+}
+.website-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  max-width: 900px;
+  padding: 10px;
+}
+
+.content {
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+.q_name label, .q_email label {
+  width: 100px;
+}
+
+.q_name, .q_email  {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  align-content: flex-start;
+}
+
+
+section {
+  margin: 20px 20px 20px 0px;
+}
+
+.question-containe {
+  display: flex;
+  flex-direction: column;
+}
+
+.q_privacy, form-check-label {
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+
+

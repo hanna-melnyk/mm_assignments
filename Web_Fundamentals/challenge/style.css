@@ -1,0 +1,170 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  font-family: Sans-Serif;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  border-bottom: solid #54A8D3 5px;
+}
+
+.header img {
+  width: 200px;
+}
+
+a {
+  color: #486EA2;
+  text-decoration: none;
+}
+
+a::after {
+  content: " |";
+  white-space: pre; /* This preserves the space before the bar */
+}
+
+/* To prevent the bar from appearing after the last link*/
+.last-link::after, #alphabet a::after {
+  /* This removes the content for the last link */
+  content: "";
+}
+
+
+.login-window label, .login-window input {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.login-window h2 {
+  display: flex;
+  background-color: #4F9DC6;
+  color: white;
+  justify-content: flex-start;
+  margin-top: 0px;
+  padding-bottom: 10px;
+  padding: 10px;
+}
+
+.login-window button {
+  background-color: #93C844;
+  width: 30%;
+  color: white;
+}
+
+.login-window .signin, .login-window button{
+  margin: auto auto 5px 105px;
+
+}
+
+.login-window {
+  border: solid #A9A9A993 2px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 250px;
+  margin: 40px; /* Center the login window */
+}
+
+.content-info li {
+  display: flex;
+  align-items: center;
+}
+
+.content-bottom h2, .footer-small-font p, .footer-small-font span, .footer-line h4{
+  color: #6D666B;
+}
+
+.content-info {
+  margin: 30px;
+}
+
+.content-info h1 {
+  color: #54A8D3;
+}
+
+
+
+.login-form .form-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px; /* Space between each label-input pair and the next */
+}
+
+.form-container .input-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center; /* Aligns the label and input in the center */
+  margin-bottom: 10px; /* Adds some space between the groups */
+}
+
+.form-container label {
+  white-space: nowrap; /* Prevents label from wrapping */
+  margin-right: 5px;
+}
+
+.form-container input {
+  width: 250px;
+}
+.content-top {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.content {
+  border: solid #E6E6E6 40px;
+  background-color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.footer {
+  background-color: #F7F7F7;
+  border-top: solid #CCCCCC 5px;
+}
+
+.search-byname h2{
+  margin: 20px;
+}
+
+.search-byname, .search-alphabetic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.search-alphabetic span {
+  margin: 10px;
+}
+
+.footer-small-font {
+  font-size: 15px;
+  margin-left: 40px;
+}
+
+.line-name {
+  margin-left: 40px;
+  flex: 1;
+}
+
+.links {
+  flex: 15;
+}
+
+.footer-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center; /* Aligns the label and input in the center */
+
+}

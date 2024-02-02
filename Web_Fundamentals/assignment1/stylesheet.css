@@ -1,0 +1,121 @@
+body {
+  width: 100%;
+  background-color: #888888;
+}
+.container {
+  background-color: white;
+  display: flex;
+  width: 400px;
+  height: 650px;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  border-radius: 50px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#signin-apple, #forgot-password, #next {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#next {
+  color: white;
+}
+
+.login-form button {
+  background-color: black;
+}
+
+#login-name {
+  padding-left: 10px;
+}
+
+.divider::before, .divider::after {
+  flex: 1;
+  content: ' ';
+  padding: 0.2px;
+  background-color: lightgrey;
+  margin: 5px;
+}
+
+.login-option-buttons {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+.close-button {
+  display: block;
+}
+#close-button {
+  display: flex;
+  justify-content: flex-start;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+.dont-have-account, .login-block {
+  margin: 10px 0px;
+}
+
+
+
+button {
+  display: block;
+  margin: 5px auto;
+}
+.button, button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 350px;
+  height: 40px;
+  margin: 15px auto;
+  border-radius: 50px;
+  border: solid 2px #888888;
+}
+.login-option-buttons img {
+  width: 35px;
+}
+
+.button-with-img a {
+  align-items: flex-start;
+}
+
+#google {
+  background: #F8FAFE;
+}
+
+.dont-have-account a {
+  color: #4DADF3;
+}
+
+.login-form input {
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  border: solid 2px #888888;
+}
+
+
+
+
+
+

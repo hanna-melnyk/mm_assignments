@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+
+}
+
+#header-links {
+
+}
+.header {
+  /*to display logo and links in space-between mode */
+  display: flex;
+  justify-content: space-between;
+  /*to display logo and links in space-between mode */
+
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 15px; /* Add some padding around the links */
+  background-color: #003087;
+  border-radius: 5px 5px 0px 0px; /* Rounded corners on the top*/
+
+}
+
+.blue-links {
+  display: flex;
+  justify-content: center; /* Horizontally centers the flex items */
+  gap: 2px; /* Adjust this value as needed to achieve 1px visual gap */
+}
+
+#blue-bottom {
+  height: 30px;
+  background-color: #003087;
+}
+
+
+
+
+.website {
+  display: flex;
+  justify-content: center;
+  width: 1000px;
+  flex-direction: column;
+}
+
+
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+.sidebar {
+  background-color: #eeeeee;
+  padding: 10px;
+}
+.main-content {
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}

@@ -1,0 +1,46 @@
+#search {
+  position: relative;
+  background-color: #EEEEEE;
+  height: 150px;
+}
+* {
+  text-align: center;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  font-weight: normal;
+  font-size: 15px;}
+
+
+.buttons_container {
+  margin: 0 auto;
+}
+
+.row {
+  display: block;
+  position: relative;
+}
+
+.block h1, h2, h3 {
+  font-size: 15px;
+}
+.block {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 0px;
+  background-color: cadetblue;
+  height: 150px;
+  width: 225px;
+}
+#search, .block {
+  height: 150px;
+}
+
+.button {
+  font-size: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+

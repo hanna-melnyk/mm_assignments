@@ -1,0 +1,176 @@
+<!doctype html>
+<html class="no-js" lang="en" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mlnk - full stack developer</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- start stylesheet copied from Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- end stylesheet copied from Bootstrap -->
+  <meta name="description" content="">
+
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="description" content="Order a website">
+  <meta name="author" content="mlnk">
+
+</head>
+
+<body>
+  <div class="website-container">
+  <!-- Add your site or application content here -->
+  <nav>
+    <a href="#">My projects</a>
+    <a href="#about">About</a>
+    <a href="#questionnaire">Tell me about yourself</a>
+    <a href="#">Send me a message</a>
+  </nav>
+  <div class="content">
+    <h1>Hanna Melnyk</h1>
+    <h2>full stack developer</h2>
+    <h3 id="about">about</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum pretium suscipit. Nunc porta eget tellus fermentum rutrum. Duis consequat nisl a dignissim aliquet. Suspendisse lacus diam, consequat eu orci quis, consequat malesuada lacus. In hac habitasse platea dictumst. Ut sit amet urna aliquam</p>
+  </div>
+  <div class="content">
+    <p>my skills:</p>
+    <ul>
+    </ul>
+  </div>
+  <div class="content">
+    <h2>Experience</h2>
+    <div class="table-container">
+      <div class="col-md-6">
+        <table class="table table-hover col-md-6">
+          <thead>
+          <tr>
+            <th scope="col">Position</th>
+            <th scope="col">Company</th>
+            <th scope="col">Year</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Web Developer</td>
+            <td>ABC</td>
+            <td>2020-2022</td>
+          </tr>
+          <tr>
+            <td>Front-end Developer</td>
+            <td>XYZ</td>
+            <td>2019-2020</td>
+          </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="blank-container col-md-6">
+
+    </div>
+    </div>
+
+  </div>
+
+
+  <hr>
+  <div class="content" id="star-content-form" >
+    <form action="submission.html" method="POST">
+      <h3 id="questionnaire">tell me about yourself</h3>
+      <div class="q_name">
+        <label for="q_name">Your name</label>
+        <input type="text" name="q_name" id="q_name">
+      </div>
+      <div class="q_email">
+        <label for="q_email">Your email</label>
+        <input type="email" name="q_email" id="q_email">
+      </div>
+
+      <div class="question-container">
+        <div class="blank-container col-md-4">
+      <section class="q_source">
+        <p>You found my website through:</p>
+        <div class="radio-item">
+        <input type="radio" id="q_source_1" name="q_source" value="30">
+        <label for="q_source_1">Online search</label>
+        </div>
+        <div class="radio-item">
+        <input type="radio" id="q_source_2" name="q_source" value="30">
+        <label for="q_source_2">LinkedIn</label>
+        </div>
+        <div class="radio-item">
+        <input type="radio" id="q_source_3" name="q_source" value="30">
+        <label for="q_source_3">Referral from a friend or colleague</label>
+        </div>
+        <div class="radio-item">
+        <input type="radio" id="q_source_4" name="q_source" value="30">
+        <label for="q_source_4">Other</label>
+        </div>
+        <!-- If 'Other' is selected, provide an input field for more details -->
+        <input type="text" id="other_source_details" name="other_source_details" placeholder="Please specify" style="display: none;">
+      </section>
+        </div>
+        <div class="blank-container col-md-8">
+        </div>
+      <hr>
+      <section class="age">
+        <p>Your age:</p>
+        <input type="radio" id="age1" name="age" value="60">
+        <label for="age1">0 - 30</label><br>
+        <input type="radio" id="age2" name="age" value="60">
+        <label for="age2">31 - 60</label><br>
+        <input type="radio" id="age3" name="age" value="100">
+        <label for="age3">61 - 100</label><br><br>
+        <input type="submit" value="Submit">
+      </section>
+      <hr>
+
+      <div class="question-container">
+      <div class="blank-container col-md-4">
+
+      <section class="rating">
+        <label for="customRange1" class="form-label">How do you rate my website? (1-10)</label>
+        <input type="range" class="form-range" id="customRange1">
+      </section>
+      </div>
+        <div class="blank-container col-md-6">
+        </div>
+      </div>
+      </div>
+      <hr>
+
+      <section class="q_privacy form-check">
+        <label class="form-check-label" for="check1">I agree to Privacy Terms</label>
+        <input class=form-check-input" type="checkbox" value="" id="check1">
+      </section>
+      <hr>
+      <section class="submission">
+        <input type="submit" value="Submit">
+      </section>
+
+    </form>
+  </div>
+
+  <div class="content">
+  <section>
+    <div>
+      <h3>Contact</h3>
+      <p>
+        Email: <span>email@example.com</span><br>
+        Phone: <span>(123) 456-7890</span>
+      </p>
+    </div>
+  </section>
+  </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

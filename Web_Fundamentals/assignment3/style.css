@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  background-color: #EEEEEE;
+  justify-content: center;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.main-content a {
+  display: flex;
+  align-items: flex-start;
+}
+
+.search-block {
+  background-color:  #CCCCCC;
+}
+
+.nav-and-main-content {
+  display: flex;
+}
+
+
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nav {
+  flex: 1;
+}
+
+.main-content {
+  flex: 4;
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px;
+}
+
+
+
+.footnotes a, .footnotes p {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+
+
+.content-item {
+  width: 200px;
+  margin: 5px;
+}
+
+
+h1, h2, .nav {
+  background-color: #DDDDDD;
+  margin: 0; /* Reset margin for h1 and h2 */
+}
+.container {
+  width: 1000px;
+}

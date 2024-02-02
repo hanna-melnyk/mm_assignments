@@ -1,0 +1,90 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.all-content {
+  width: 1000px;
+}
+
+
+
+.calendar input[type="date"], input[type="text"]   {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 5px 0px;
+}
+
+input[type="number"] {
+  width: 50px;
+  margin: 5px 0px;
+}
+
+
+.listing-bottom-block {
+  display: flex;
+  align-items: center;
+}
+
+.listing-bottom-block {
+  display: flex;
+  align-items: center;
+}
+
+.listing-bottom-block img {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.listing-bottom-block h3,
+.listing-bottom-block p {
+  margin: 0;
+}
+
+
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 5px;
+}
+.column-feed-block {
+  flex: 1;
+}
+.listing-block, .search-block {
+  flex: 2;
+}
+
+
+.column-feed-block img, .row-feed-block img {
+  width: 200px;
+}
+
+.listing-top-block img {
+  width: 90%;
+}
+
+.references-block img {
+  height: 20px;
+  align-content: center;
+  justify-content: end;
+}
+
+.column-feed-block h4, .row-feed-block h4 {
+  color: #e03bb2;
+  margin: 0px;
+}
+
+.column-feed-block p, .row-feed-block p {
+  color: #4f4848;
+  margin: 0px;
+  font-size: 13px;
+}
