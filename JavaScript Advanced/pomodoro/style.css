@@ -1,0 +1,72 @@
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  color: #333;
+}
+
+#container {
+  text-align: center;
+  border: 2px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.small-container {
+  margin: 30px 0;
+
+}
+
+.timer {
+  font-size: 24px;
+  margin: 10px 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.time-value {
+  min-width: 50px;
+  display: inline-block;
+  font-size: 32px;
+  color: #e53e3e; /* A red color for timer values */
+}
+
+.semicolon {
+  font-size: 32px;
+  color: #333; /* Darker color for contrast */
+}
+
+.btn, .btn-timer {
+  border: none;
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  align-content: center;
+}
+
+.btn-timer {
+  background-color: #777; /* Darker for +/- buttons */
+  font-weight: bold;
+  padding: 5px 10px; /* Smaller padding for +/- buttons */
+
+}
+
+.btn:hover, .btn-timer:hover {
+  background-color: #555; /* Darken button on hover */
+}
+
+.btn:active, .btn-timer:active {
+  transform: translateY(2px); /* Simple press effect */
+}

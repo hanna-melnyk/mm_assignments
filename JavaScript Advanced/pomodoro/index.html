@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Pomodoro Timer</title>
+</head>
+<body>
+<h1>Pomodoro Timer</h1>
+<div id="container">
+  <!--Work Timer-->
+  <div class="small-container">
+    <p>Work Time (minutes):</p>
+  <div id="work-timer" class="timer">
+    <button class="btn-timer" onclick="changeTime('w_minutes', -1)">-</button>
+    <p id="w_minutes" class="time-value">25</p>
+
+    <p class="semicolon">:</p>
+    <p id="w_seconds" class="time-value">00</p>
+    <button class="btn-timer" onclick="changeTime('w_minutes', 1)">+</button>
+  </div>
+
+  </div>
+
+
+  <!--Cycle Counter-->
+  <div class="small-container">
+    <p>Counter:</p>
+    <p id="counter" class="timer">0</p>
+
+  </div>
+
+  <!--Break Timer-->
+  <div class="small-container">
+    <p>Break Time (minutes):</p>
+  <div id="break-timer" class="timer">
+    <button class="btn-timer" onclick="changeTime('b_minutes', -1)">-</button>
+    <p id="b_minutes" class="time-value">05</p>
+
+    <p class="semicolon">:</p>
+    <p id="b_seconds" class="time-value">00</p>
+    <button class="btn-timer" onclick="changeTime('b_minutes', 1)">+</button>
+  </div>
+
+  </div>
+  <div id="buttons">
+    <button id="start" class="btn">Start</button>
+    <button id="stop" class="btn">Pause</button>
+    <button id="reset" class="btn">Reset</button>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
