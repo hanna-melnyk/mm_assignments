@@ -34,7 +34,32 @@ function reverseValues(arrayToShift) {
   return result;
 }
 
-console.log(reverseValues(arrayToShift));
+console.log("Reversed array using .pop() : " +reverseValues(arrayToShift));
+
+function reverseArray(arrayToShift) {
+  let result = new Array(arrayToShift.length)
+  let resultLength = result.length;
+  for (let i = arrayToShift.length-1; i >= 0; i--) {
+    result[resultLength-i] = arrayToShift[i];
+  }
+  return result;
+}
+
+console.log("Reversed array using a new array" + reverseArray([2,1,6,4,-7]))
+
+
+function reversedArrayModified(arrayToShift) {
+  let arrayLen = arrayToShift.length-1;
+  let midwayIndex = Math.floor(arrayLen /2);
+  for (let i = arrayLen; i >= midwayIndex; i--) {
+    let temp = arrayToShift[i];
+    arrayToShift[i] = arrayToShift[arrayLen-i];
+    arrayToShift[arrayLen-i] = temp;
+  }
+  return arrayToShift
+}
+
+console.log('Changed array: ' + reversedArrayModified([2,1,6,4,-7]))
 
 
 // 3. FizzBuzz
