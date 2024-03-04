@@ -21,6 +21,7 @@ app.use(express.static('public'));
 // Post model is in Post.js file
 
 // Routes
+//to serve the main html page
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
@@ -41,6 +42,17 @@ app.post('/submit', async (req, res) => {
     res.status(400).send(error.message);
   }
 });
+
+//to serve the /posts path (it queries MongoDB database)
+app.get('/posts', async (req, res) => {
+  try {
+    const posts = await Post.find().sort({ createdAt: -1 }); // Fetch all posts, sort by timestamp
+    res.json(posts); // Send posts as JSON
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
 
 // Start server
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));

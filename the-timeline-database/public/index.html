@@ -34,6 +34,32 @@
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+  // Function to fetch and display posts
+  function fetchPosts() {
+    console.log('Fetching posts...');
+    $.ajax({
+      url: '/posts',
+      type: 'GET',
+      success: function(posts) {
+        const postsList = $('#postsList');
+        postsList.empty(); // Clear existing posts
+        posts.forEach(post => {
+          postsList.append(`
+          <div class="post">
+            <h3>${post.title}</h3>
+            <p>${post.content}</p>
+             <i>Posted by: ${post.username} on ${new Date(post.createdAt).toLocaleString()}</i>
+          </div>
+        `);
+        });
+      },
+      error: function(error) {
+        console.error('Error fetching posts:', error);
+      }
+    });
+  }
+
+  // submitPost function with a call to fetchPosts on success
   function submitPost() {
     $.ajax({
       url: '/submit',
@@ -45,13 +71,22 @@
       },
       success: function(response) {
         alert('Post submitted successfully');
-        // Optionally, clear the form or redirect the user
+        fetchPosts(); // Fetch and display all posts, including the new one
+        // Optionally, clear the form
+        $('#username').val('');
+        $('#title').val('');
+        $('#content').val('');
       },
       error: function(error) {
         alert('Error submitting post');
       }
     });
   }
+
+  // Call fetchPosts when the page loads to display all existing posts
+  $(document).ready(function() {
+    fetchPosts();
+  });
 </script>
 </body>
 </html>
