@@ -18,13 +18,7 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-// Post model
-const postSchema = new mongoose.Schema({
-  username: { type: String, required: true },
-  title: { type: String, required: true, minlength: 25 },
-  content: { type: String, required: true, minlength: 25 }
-});
-const Post = mongoose.model('Post', postSchema);
+// Post model is in Post.js file
 
 // Routes
 app.get('/', (req, res) => {
@@ -49,5 +43,5 @@ app.post('/submit', async (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
 
