@@ -1,72 +1,53 @@
-
-// import modules
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const Post = require('./models/Post');
 
-
-// initialize express
 const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('Connected to MongoDB...'))
+  .catch(err => console.error('Could not connect to MongoDB...', err));
 
 
-// configure dotenv to load the environment variables
-require('dotenv').config();
-
-
-// configure middleware
-app.use(bodyParser.json());
+// Middlewares
+//app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
-
-//Construct the connection string with the password from .env
-const dbPassword = encodeURIComponent(process.env.DB_PASSWORD);
-const connectionString = `mongodb+srv://hannamelnk:${dbPassword}@cluster0.7s2mp2v.mongodb.net/?retryWrites=true&w=majority`;
-
-
-//connect to mongoDB
-mongoose.connect(connectionString)
-  .then(() => console.log('MongoDB connected...'))
-  .catch(err => console.log(err));
-
-
-//define models
+// Post model
 const postSchema = new mongoose.Schema({
+  username: { type: String, required: true },
   title: { type: String, required: true, minlength: 25 },
-  content: { type: String, required: true, minlength: 25 },
-  createdAt: { type: Date, default: Date.now },
+  content: { type: String, required: true, minlength: 25 }
 });
-
 const Post = mongoose.model('Post', postSchema);
 
-//set up routes to handle endpoints
+// Routes
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
 
-//to get all posts
-app.get('/posts', async (req, res) => {
+app.post('/submit', async (req, res) => {
+  const { username, title, content } = req.body;
+
+  if (!username || !title || !content) {
+    return res.status(400).send('All fields are required.');
+  }
+
+  const post = new Post({ username, title, content });
+
   try {
-    const posts = await Post.find();
-    res.json(posts);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
+    await post.save();
+    res.status(201).send('Post saved successfully');
+  } catch (error) {
+    res.status(400).send(error.message);
   }
 });
 
-//to create a new post
-app.post('/posts', async (req, res) => {
-  const post = new Post({
-    title: req.body.title,
-    content: req.body.content,
-  });
-
-  try {
-    const newPost = await post.save();
-    res.status(201).json(newPost);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
-
-
-//start the server: make the app listen to a specific port
-const PORT = process.env.PORT || 3000;
+// Start server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submission Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2>Post Submission Form</h2>
+  <form id="postForm" onsubmit="submitPost(); return false;">
+
+  <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+    </div>
+    <div class="form-group">
+      <label for="title">Post Title</label>
+      <input type="text" class="form-control" id="title" placeholder="Enter post title" required minlength="25">
+    </div>
+    <div class="form-group">
+      <label for="content">Post Content</label>
+      <textarea class="form-control" id="content" rows="3" required minlength="25"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div id="postsList"></div>
+</div>
+
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  function submitPost() {
+    $.ajax({
+      url: '/submit',
+      type: 'POST',
+      data: {
+        username: $('#username').val(),
+        title: $('#title').val(),
+        content: $('#content').val()
+      },
+      success: function(response) {
+        alert('Post submitted successfully');
+        // Optionally, clear the form or redirect the user
+      },
+      error: function(error) {
+        alert('Error submitting post');
+      }
+    });
+  }
+</script>
+</body>
+</html>
