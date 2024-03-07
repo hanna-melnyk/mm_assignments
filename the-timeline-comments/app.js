@@ -7,6 +7,11 @@ const bodyParser = require('body-parser');
 // (logic moved to postController.js)
 
 const app = express();
+
+// Set the view engine to ejs
+app.set('view engine', 'ejs');
+app.set('views', './views'); //directory where the view templates are located
+
 const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
@@ -14,13 +19,6 @@ mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB...'))
   .catch(err => console.error('Could not connect to MongoDB...', err));
 
-// noo, it cant connect to a database
-//ive changed my ip recently
-// but i added it to whitelist, so i dont know whats the problem
-// still not connecting
-// OKE
-// thank you
-//alright!
 
 // Middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
