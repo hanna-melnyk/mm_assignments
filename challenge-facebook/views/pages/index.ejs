@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Welcome to Facebook</h2>
+    <form action="/submit" method="POST">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+            <label for="title">Name</label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="Enter the name of the post" required minlength="25">
+        </div>
+        <div class="form-group">
+            <label for="content">Message</label>
+            <textarea class="form-control" name="content" id="content" placeholder="Enter your message here!" rows="3" required minlength="25"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- Displaying posts and comments -->
+    <% posts.forEach(post => { %>
+        <div class="post mt-4">
+            <h3><%= post.title %></h3>
+            <p><%= post.content %></p>
+            <i>Posted by: <%= post.username %> on <%= new Date(post.createdAt).toLocaleString() %></i>
+
+            <!-- See More link -->
+            <a href="/articles/<%= post._id %>">See More</a>
+
+
+            <!-- Display comments for each post -->
+            <% if(post.comments && post.comments.length) { %>
+                <div class="comments mt-2">
+                    <% post.comments.forEach(comment => { %>
+                        <div class="comment mb-2 ml-5">
+                            <p><%= comment.content %></p>
+                            <i>Comment by: <%= comment.username %> on <%= new Date(comment.createdAt).toLocaleString() %></i>
+                        </div>
+                    <% }); %>
+                </div>
+            <% } %>
+
+            <!-- Form to submit a new comment -->
+            <form action="/posts/<%= post._id %>/comments" method="POST" class="mt-2 ml-5">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="content" placeholder="Write a comment..." required minlength="25"></textarea>
+                </div>
+                <button type="submit" class="btn btn-secondary">Post a comment</button>
+            </form>
+        </div>
+    <% }); %>
+</div>
+
+</body>
+</html>
